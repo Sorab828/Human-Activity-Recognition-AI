@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Human Activity Recognition</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🏃 Human Activity Recognition</h1>
+
+    <p class="subtitle">
+        Real-Time Activity Detection using LSTM
+    </p>
+
+    <div class="status-card">
+
+        <h2>Status</h2>
+
+        <p id="status">
+            Connecting...
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Activity</h3>
+
+            <h2 id="activity">
+                --
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Confidence</h3>
+
+            <h2 id="confidence">
+                0%
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="sensor-card">
+
+        <h2>Live Accelerometer</h2>
+
+        <div class="sensor-grid">
+
+            <div>
+                X
+                <span id="x">0</span>
+            </div>
+
+            <div>
+                Y
+                <span id="y">0</span>
+            </div>
+
+            <div>
+                Z
+                <span id="z">0</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="graph-card">
+
+        <canvas id="chart"></canvas>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
